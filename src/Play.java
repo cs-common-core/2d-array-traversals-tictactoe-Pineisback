@@ -8,7 +8,17 @@ public class Play {
         TicTacToe game = new TicTacToe();
         while(!game.isGameOver()) {
             game.printBoard();
-            // your code here
+           System.out.println("Turn for:" +game.getCurrentPlayer());
+           int row=scanner.nextInt();
+           int col= scanner.nextInt();
+           game.play(row,col);
+
+        }
+        int winner=game.getWinner();
+        if(winner!=0){
+            System.out.println("Win! for player:" +winner);
+        }else{
+            System.out.println("draw");
         }
         scanner.close();
     }
